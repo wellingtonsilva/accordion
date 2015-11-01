@@ -1,4 +1,4 @@
-# accordion
+# Accordion
 
 Exemplo de accordion usando jquery sem plugin
 
