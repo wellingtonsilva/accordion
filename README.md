@@ -1,5 +1,5 @@
 # Accordion
 
-Exemplo de accordion usando jquery sem plugin
+Exemplo de accordion usando jquery
 
-Link: http://wellingtonsilva.net/accordion-master/
+Link: http://wellingtonsilva.net/FAQ/

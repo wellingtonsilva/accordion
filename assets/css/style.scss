@@ -4,58 +4,110 @@ $mobile: "only screen and (max-width : 767px)";
     padding:0;
     box-sizing: border-box;
 }
+
+
 li{
     list-style:none;
 }
 body{
-    font-family:Verdana, Geneva, sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f3f3f5;
 }
-.acoordion-produto-mobile{
-	
-max-width:960px;
-margin:30px auto;
-padding:0px 15px;
+main {
+    max-width:960px;
+    margin:30px auto;
+    padding:0px 15px;
 }
-.wrap-acoordion.aberto {
-    background: #dadada;
+
+h1 {
+    margin:0 0 20px 0;
 }
+
+.link {
+    text-decoration:none;
+    color:#0084B4;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
 .wrap-acoordion{
-	background: #dae1df;
+	background: #fff;
 	padding: 8px 7px;
-	p{
-		font-family: Verdana, Geneva, sans-serif;
-		text-transform: uppercase;
-        @media #{$mobile}{
-            font-size:13px;
-            padding-right: 50px;
-         }
-	}
+    cursor:pointer;
+}
+
+.question {
+    font-size: 24px;
+    color: #a9c056;
+    position:relative;
+    @media #{$mobile}{
+        font-size:16px;
+        padding-right: 50px;
+    }
+}
+.question::before, .question::after {
+    position: absolute;
+    right: 24px;
+    top: 50%;
+    height: 4px;
+    width: 16px;
+    background: #cfdca0;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    content: '';
+}
+.question::before {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    right: 32px;
+    content: '';
+}
+.open .question::before {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    content: '';
+}
+.question::after {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    content: '';
+}
+.open .question::after {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    content: '';
 }
 .item-acordion{
-	margin-bottom: 3px;
+	margin-bottom: 10px;
+    transition: box-shadow 0.2s;
+    &:hover {
+            box-shadow: 0 1px 10px rgba(108, 125, 142, 0.3);
+    }
 }
-.conteudo-accordion {
+.content-accordion {
     display: none;
-    background: #F5F4F4;
+    background: #fff;
     width: 100%;
     padding: 15px 15px 15px 15px;
     
 }
 
-.seta-accordion-interna {
-    background: url("../img/setas-acordion.png") no-repeat;
-    width: 26px;
-    height: 21px;
-    float: right;
-    margin-top: -17px;
-    margin-right: 10px;
-    background-size: 20px;
-    background-position: 0 -20px;
-}
-.seta-accordion-interna.arrow-up{
-	background-position: 0 0px;
-}
-
-.lista-notas li+li .txt-nota {
-    display: none;
-}
